@@ -1,0 +1,9 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0A0A0A"/>
+  <rect x="150" y="150" width="500" height="150" rx="20" fill="#121212" stroke="#8A4FFF" stroke-width="2"/>
+  <circle cx="250" cy="225" r="50" fill="#FF3B30" opacity="0.8"/>
+  <text x="250" y="235" font-family="Arial" font-size="24" fill="white" text-anchor="middle" font-weight="bold">STOP</text>
+  <path d="M350 200 L450 200 L450 250 L550 250" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="550" cy="250" r="30" fill="#8A4FFF" opacity="0.8"/>
+  <text x="400" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Emergency Techniques to Beat Urges</text>
+</svg> 

@@ -1,0 +1,9 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0A0A0A"/>
+  <path d="M400 100 C250 100, 150 200, 150 300 C150 350, 200 380, 250 350 C300 320, 350 300, 400 300 C450 300, 500 320, 550 350 C600 380, 650 350, 650 300 C650 200, 550 100, 400 100" stroke="#8A4FFF" stroke-width="8" fill="none"/>
+  <circle cx="250" cy="200" r="30" fill="#8A4FFF" opacity="0.6"/>
+  <circle cx="400" cy="200" r="40" fill="#8A4FFF" opacity="0.8"/>
+  <circle cx="550" cy="200" r="30" fill="#8A4FFF" opacity="0.6"/>
+  <path d="M250 200 L400 200 L550 200" stroke="#8E2DE2" stroke-width="4" stroke-dasharray="10 5"/>
+  <text x="400" y="80" font-family="Arial" font-size="24" fill="white" text-anchor="middle">The Science of Brain Rewiring</text>
+</svg> 
