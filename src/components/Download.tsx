@@ -28,7 +28,9 @@ export default function Download() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#app-store" 
+                  href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition-all"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
