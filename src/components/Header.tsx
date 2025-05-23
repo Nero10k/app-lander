@@ -8,6 +8,15 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold text-white">
             POWER
           </Link>
+          
+          <a 
+            href="https://believe.app/coin/DDhfToCTkJjJ3j921hKHcgCdc5RTvrUQTfmWJ3YQo6tf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="ml-4 text-xs sm:text-sm bg-gradient-to-r from-[#8A4FFF]/20 to-[#8E2DE2]/20 text-white px-2 sm:px-3 py-1 rounded-full border border-purple-500/30 hover:border-purple-500/50 transition-all animate-pulse"
+          >
+            $POWER now live on Believe
+          </a>
         </div>
         
         <nav className="hidden md:flex space-x-8">
