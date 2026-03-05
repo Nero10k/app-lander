@@ -3,8 +3,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog';
+import { getAuthorBySlug } from '@/lib/authors';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const SITE_URL = 'https://powerquitporn.com';
 
 interface PageProps {
   params: { slug: string };
@@ -19,19 +22,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPostBySlug(params.slug);
   if (!post) return { title: 'Post Not Found' };
 
-  const siteUrl = 'https://powerquitporn.com';
-
   return {
-    title: `${post.title} | POWER Blog`,
+    title: post.title,
     description: post.description,
     keywords: post.tags,
+    authors: [{ name: getAuthorBySlug(post.author)?.name ?? 'POWER Editorial Team' }],
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       siteName: 'POWER',
+      tags: post.tags,
     },
     twitter: {
       card: 'summary_large_image',
@@ -39,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.description,
     },
     alternates: {
-      canonical: `${siteUrl}/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
   };
 }
@@ -49,27 +52,66 @@ export default function BlogPostPage({ params }: PageProps) {
   if (!post) notFound();
 
   const related = getRelatedPosts(params.slug, 3);
+  const author = getAuthorBySlug(post.author);
+  const isHowTo = post.title.toLowerCase().startsWith('how to');
 
-  const jsonLd = {
+  // Article JSON-LD
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    author: {
+      '@type': 'Person',
+      name: author?.name ?? 'POWER Editorial Team',
+      url: `${SITE_URL}/authors/${post.author}`,
+    },
     publisher: {
       '@type': 'Organization',
       name: 'POWER',
-      url: 'https://powerquitporn.com',
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
     },
     keywords: post.tags.join(', '),
+    articleSection: post.category,
+    image: `${SITE_URL}/blog/${post.slug}/opengraph-image`,
   };
+
+  // BreadcrumbList JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.category, item: `${SITE_URL}/blog/category/${post.category.toLowerCase().replace(/\s+/g, '-')}` },
+      { '@type': 'ListItem', position: 4, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+    ],
+  };
+
+  // HowTo JSON-LD for "how to" articles
+  const howToJsonLd = isHowTo ? {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: post.title,
+    description: post.description,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    author: {
+      '@type': 'Person',
+      name: author?.name ?? 'POWER Editorial Team',
+    },
+  } : null;
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {howToJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      )}
       <Header />
 
       <main className="pt-24 pb-20">
@@ -78,17 +120,22 @@ export default function BlogPostPage({ params }: PageProps) {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] to-black z-0" />
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#8A4FFF]/20 rounded-full blur-3xl z-0" />
           <div className="container mx-auto px-4 py-16 relative z-10 max-w-4xl">
-            <div className="mb-4">
+
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2 text-sm text-white/40 mb-6 flex-wrap">
+              <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/blog" className="hover:text-white/70 transition-colors">Blog</Link>
+              <span>/</span>
               <Link
-                href="/blog"
-                className="text-[#8A4FFF] hover:text-purple-400 transition-colors text-sm inline-flex items-center gap-1"
+                href={`/blog/category/${post.category.toLowerCase().replace(/\s+/g, '-')}`}
+                className="hover:text-white/70 transition-colors"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                All Articles
+                {post.category}
               </Link>
-            </div>
+              <span>/</span>
+              <span className="text-white/60 truncate max-w-[200px]">{post.title}</span>
+            </nav>
 
             <span className="inline-block bg-[#8A4FFF]/20 text-[#8A4FFF] text-sm font-medium px-3 py-1 rounded-full border border-[#8A4FFF]/30 mb-4">
               {post.category}
@@ -98,16 +145,30 @@ export default function BlogPostPage({ params }: PageProps) {
               {post.title}
             </h1>
 
-            <div className="flex items-center gap-4 text-white/50 text-sm mb-8">
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
+            {/* Author + meta row */}
+            <div className="flex items-center gap-4 flex-wrap">
+              <Link
+                href={`/authors/${post.author}`}
+                className="flex items-center gap-3 group"
+              >
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#8A4FFF] to-[#6D28D9] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
+                  {(author?.name ?? 'P').charAt(0)}
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+                    {author?.name ?? 'POWER Editorial Team'}
+                  </div>
+                  {author && (
+                    <div className="text-xs text-white/40">{author.title}</div>
+                  )}
+                </div>
+              </Link>
+              <span className="text-white/20">·</span>
+              <time dateTime={post.date} className="text-sm text-white/50">
+                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </time>
-              <span>·</span>
-              <span>{post.readTime}</span>
+              <span className="text-white/20">·</span>
+              <span className="text-sm text-white/50">{post.readTime}</span>
             </div>
           </div>
         </div>
@@ -150,6 +211,25 @@ export default function BlogPostPage({ params }: PageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Author card */}
+              {author && (
+                <div className="bg-white/5 rounded-2xl p-5 border border-white/10">
+                  <h3 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-3">About the Author</h3>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8A4FFF] to-[#6D28D9] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
+                      {author.name.charAt(0)}
+                    </div>
+                    <div>
+                      <Link href={`/authors/${post.author}`} className="text-sm font-semibold text-white hover:text-[#8A4FFF] transition-colors">
+                        {author.name}
+                      </Link>
+                      <p className="text-xs text-[#8A4FFF] mb-2">{author.title}</p>
+                      <p className="text-xs text-white/50 leading-relaxed line-clamp-3">{author.bio}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* CTA */}
               <div className="bg-gradient-to-br from-[#8A4FFF]/20 to-[#8E2DE2]/10 rounded-2xl p-5 border border-[#8A4FFF]/20">

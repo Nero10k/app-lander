@@ -13,6 +13,7 @@ export interface BlogPost {
   tags: string[];
   readTime: string;
   featured: boolean;
+  author: string;
   content: string;
 }
 
@@ -41,6 +42,7 @@ export function getAllPosts(): BlogPostMeta[] {
       tags: data.tags ?? [],
       readTime: calcReadTime(content),
       featured: data.featured ?? false,
+      author: data.author ?? 'power-editorial-team',
     } as BlogPostMeta;
   });
 
@@ -63,6 +65,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     tags: data.tags ?? [],
     readTime: calcReadTime(content),
     featured: data.featured ?? false,
+    author: data.author ?? 'power-editorial-team',
     content,
   };
 }
