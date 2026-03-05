@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -17,75 +16,64 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="block text-white">Rewire Your Brain &</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2]">
-                Break Free From Porn
-              </span>
-            </h1>
-            
-            <p className="text-lg text-white/80 mb-6 max-w-xl mx-auto lg:mx-0">
-              Neuroscience-backed recovery tools that actually work, designed by addiction specialists with a 94% success rate.
-            </p>
-            
-            {/* Benefits list */}
-            <div className="mb-6 text-left">
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] flex-shrink-0 mr-2 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+            {/* Social proof badge */}
+            <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-5">
+              <div className="flex -space-x-2">
+                {['#8A4FFF', '#6D28D9', '#7C3AED', '#5B21B6', '#4C1D95'].map((color, i) => (
+                  <div
+                    key={i}
+                    className="w-7 h-7 rounded-full border-2 border-black flex items-center justify-center text-[10px] font-bold text-white"
+                    style={{ backgroundColor: color }}
+                  >
+                    {['M', 'J', 'A', 'R', 'T'][i]}
                   </div>
-                  <span className="text-white/90">Proprietary Brain Rewiring Technology</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] flex-shrink-0 mr-2 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-white/90">Personalized 90-Day Recovery Plan</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] flex-shrink-0 mr-2 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-white/90">Advanced Urge Management Tools</span>
-                </li>
-              </ul>
+                ))}
+              </div>
+              <span className="text-sm text-white/80 font-medium">Trusted by <span className="text-white font-bold">250,000+</span> men</span>
             </div>
 
-            <div className="text-sm text-white/60 mb-6 italic">
-              "Developed with addiction neuroscientists from leading research institutions"
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start flex-wrap">
-              <a 
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-5 leading-[1.05]">
+              <span className="block text-white">Quit Porn For Life</span>
+              <span className="block">
+                With{' '}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2]">
+                  POWER
+                </span>
+              </span>
+            </h1>
+
+            <p className="text-lg text-white/70 mb-8 max-w-md mx-auto lg:mx-0">
+              Meet POWER, the #1 app for quitting porn with all the tools needed to make the process easy.
+            </p>
+
+            {/* App store buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              {/* App Store */}
+              <a
                 href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all text-center"
+                className="inline-flex items-center gap-3 bg-black border border-white/20 text-white px-5 py-3 rounded-xl font-medium hover:border-white/40 transition-all"
               >
-                Download Now
-              </a>
-              <Link 
-                href="/quiz" 
-                className="bg-white/5 text-white border border-[#8A4FFF]/40 px-8 py-3 rounded-full font-medium hover:bg-white/10 hover:border-[#8A4FFF]/60 transition-all text-center flex items-center"
-              >
-                <span>Take Assessment</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
-              </Link>
-              <a 
-                href="#learn-more" 
-                className="bg-white/10 text-white border border-white/20 px-8 py-3 rounded-full font-medium hover:bg-white/15 transition-all text-center"
-              >
-                Learn More
+                <div className="text-left">
+                  <div className="text-[10px] leading-tight text-white/60">Download on the</div>
+                  <div className="text-sm font-semibold leading-tight">App Store</div>
+                </div>
               </a>
+
+              {/* Google Play */}
+              <span className="inline-flex items-center gap-3 bg-black border border-white/20 text-white px-5 py-3 rounded-xl font-medium opacity-50 cursor-not-allowed select-none">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.18 23.76c.35.2.74.24 1.12.14l11.9-6.86-2.56-2.56-10.46 9.28zM.5 1.9C.19 2.3 0 2.88 0 3.62v16.76c0 .74.19 1.32.51 1.72l.09.08 9.39-9.39v-.22L.59 3.18.5 1.9zM20.1 10.5l-2.68-1.54-2.85 2.85 2.85 2.85 2.7-1.55c.77-.44.77-1.16-.02-1.61zM4.3.1L16.2 6.96l-2.56 2.56L3.18.24C3.56.14 3.95.2 4.3.1z"/>
+                </svg>
+                <div className="text-left">
+                  <div className="text-[10px] leading-tight text-white/60">GET IT ON</div>
+                  <div className="text-sm font-semibold leading-tight">Google Play</div>
+                </div>
+              </span>
             </div>
           </div>
           

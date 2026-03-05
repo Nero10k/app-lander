@@ -6,6 +6,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Download from '@/components/Download';
+import LatestArticles from '@/components/LatestArticles';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Benefits />
         <HowItWorks />
         <Testimonials />
+        <LatestArticles />
         <FAQ />
         <Download />
       </main>
