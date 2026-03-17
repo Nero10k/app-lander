@@ -195,6 +195,26 @@ export default function BlogPostPage({ params }: PageProps) {
               <MDXRemote source={post.content} />
             </article>
 
+            {/* End-of-article CTA — visible on all screen sizes, including mobile */}
+            <div className="mt-12 bg-gradient-to-br from-[#8A4FFF]/20 to-[#8E2DE2]/10 rounded-2xl p-6 md:p-8 border border-[#8A4FFF]/20 lg:hidden">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-white mb-1">Ready to quit for good?</h3>
+                  <p className="text-white/60 text-sm">
+                    POWER gives you structured tools, daily tracking, and urge management — built on the neuroscience in this article. 250,000+ men are already on their recovery journey.
+                  </p>
+                </div>
+                <a
+                  href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all whitespace-nowrap"
+                >
+                  Download Free
+                </a>
+              </div>
+            </div>
+
             {/* Sidebar */}
             <aside className="space-y-6">
               {/* Tags */}
@@ -238,7 +258,7 @@ export default function BlogPostPage({ params }: PageProps) {
                   The POWER app gives you structured tools, daily tracking, and urge management — built on the science in this article.
                 </p>
                 <a
-                  href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
+                  href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white px-4 py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"

@@ -149,7 +149,7 @@ export default function ActionPlan({ userName, answers, onFinish }: ActionPlanPr
       
       <div className="flex justify-center">
         <a
-          href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
+          href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto btn-primary bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white px-4 sm:px-10 py-2.5 sm:py-4 rounded-full text-xs sm:text-base font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all flex items-center justify-center"

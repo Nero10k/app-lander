@@ -45,7 +45,7 @@ const organizationJsonLd = {
   logo: 'https://powerquitporn.com/logo.png',
   description: 'POWER is the #1 app for quitting porn addiction, trusted by 250,000+ men worldwide. Built on neuroscience.',
   sameAs: [
-    'https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444',
+    'https://apps.apple.com/us/app/power-quit-porn-now/id6743706444',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

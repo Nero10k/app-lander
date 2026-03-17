@@ -117,7 +117,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
+                href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"

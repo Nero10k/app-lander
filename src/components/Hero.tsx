@@ -50,7 +50,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               {/* App Store */}
               <a
-                href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
+                href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-black border border-white/20 text-white px-5 py-3 rounded-xl font-medium hover:border-white/40 transition-all"

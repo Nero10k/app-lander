@@ -28,7 +28,7 @@ export default function Download() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444" 
+                  href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition-all"
@@ -63,7 +63,7 @@ export default function Download() {
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] flex items-center justify-center text-white text-sm font-bold border-2 border-black">J</div>
                 </div>
                 <div className="text-white/70 text-sm">
-                  Join <span className="text-white font-medium">10,000+</span> users on their journey to freedom
+                  Join <span className="text-white font-medium">250,000+</span> men on their journey to freedom
                 </div>
               </div>
             </div>

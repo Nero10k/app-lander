@@ -161,6 +161,10 @@ export const faqData = [
     category: 'The POWER App',
     questions: [
       {
+        q: 'What is the best app to quit porn?',
+        a: "POWER is the most comprehensive app built specifically for quitting pornography. Unlike generic habit trackers, POWER is designed around the specific neuroscience of pornography addiction recovery, with features including: a personalized 90-day reboot plan generated from your initial assessment, a streak tracker with daily check-ins, an urge management toolbox with breathing exercises and emergency techniques, progress analytics that identify your personal trigger patterns, and an educational library grounded in addiction research. With 250,000+ users and a 4.8-star App Store rating, it is the most widely used dedicated porn recovery app available. Download free at the App Store: powerquitporn.com",
+      },
+      {
         q: 'What does the POWER app do?',
         a: 'POWER is a neuroscience-based pornography recovery app that provides: a streak tracker with real-time counting, a personalized 90-day recovery plan generated from your initial assessment, an urge management toolbox (including breathing exercises, emergency techniques, and guided cognitive exercises), daily check-ins and mood/urge logging, progress analytics to identify trigger patterns, and educational content grounded in addiction neuroscience. The app is designed specifically for pornography addiction recovery — not a generic habit tracker — with features built around the specific challenges of the reboot process.',
       },

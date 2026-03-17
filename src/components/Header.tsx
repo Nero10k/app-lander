@@ -90,7 +90,7 @@ export default function Header() {
 
         {/* CTA */}
         <a
-          href="https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444"
+          href="https://apps.apple.com/us/app/power-quit-porn-now/id6743706444"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-gradient-to-r from-[#8A4FFF] to-[#8E2DE2] text-white text-sm px-5 py-2 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"

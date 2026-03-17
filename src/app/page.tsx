@@ -41,8 +41,8 @@ const appJsonLd = {
     worstRating: '1',
   },
   description: 'The #1 neuroscience-backed app for quitting porn addiction. Trusted by 250,000+ men worldwide. Features streak tracking, urge management, brain rewiring programs, and community support.',
-  url: 'https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444',
-  downloadUrl: 'https://apps.apple.com/nl/app/power-quit-porn-now/id6743706444',
+  url: 'https://apps.apple.com/us/app/power-quit-porn-now/id6743706444',
+  downloadUrl: 'https://apps.apple.com/us/app/power-quit-porn-now/id6743706444',
   author: {
     '@type': 'Organization',
     name: 'POWER',
