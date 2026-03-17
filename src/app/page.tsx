@@ -11,12 +11,18 @@ import LatestArticles from '@/components/LatestArticles';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'POWER – Quit Porn For Life',
-  description: 'Join 250,000+ men on a mission to quit porn forever. POWER provides neuroscience-backed tools, daily tracking, urge management, and community support.',
+  title: 'POWER – #1 App to Quit Porn | Porn Addiction Recovery',
+  description: 'Join 250,000+ men who quit porn with POWER — the #1 porn addiction recovery app. Neuroscience-backed urge management, 90-day reboot plan, daily tracking, and streak counter. Free download.',
+  keywords: [
+    'quit porn', 'how to quit porn', 'porn addiction', 'porn addiction recovery',
+    'nofap app', 'app to quit porn', 'porn addiction app', 'how to stop watching porn',
+    'porn addiction recovery app', 'nofap', 'stop porn addiction', 'porn blocker app',
+    'porn addiction help', 'quit porn app', 'best nofap app',
+  ],
   alternates: { canonical: 'https://powerquitporn.com' },
   openGraph: {
-    title: 'POWER – Quit Porn For Life',
-    description: 'The #1 neuroscience-backed app for porn addiction recovery. Trusted by 250,000+ men worldwide.',
+    title: 'POWER – #1 App to Quit Porn | Porn Addiction Recovery',
+    description: 'The #1 neuroscience-backed app for porn addiction recovery. 250,000+ men. Free download. Personalized 90-day reboot plan, urge management, and daily tracking.',
     url: 'https://powerquitporn.com',
     type: 'website',
   },

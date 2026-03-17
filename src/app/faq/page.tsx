@@ -10,16 +10,13 @@ export const metadata: Metadata = {
   description:
     'Comprehensive answers to every question about porn addiction: what it is, how to quit, brain rewiring, NoFap, PIED, relationships, withdrawal, and recovery timelines.',
   keywords: [
-    'porn addiction FAQ',
-    'how to quit porn',
-    'is porn addiction real',
-    'porn withdrawal symptoms',
-    'NoFap questions',
-    'PIED recovery',
-    'how long to quit porn',
-    'porn addiction help',
-    'brain rewiring porn',
-    'dopamine detox',
+    'porn addiction FAQ', 'how to quit porn', 'is porn addiction real',
+    'porn withdrawal symptoms', 'nofap flatline', 'nofap questions', 'PIED recovery',
+    'porn induced erectile dysfunction', 'how long to quit porn', 'porn addiction help',
+    'brain rewiring porn', 'dopamine detox', 'why do i keep watching porn',
+    'porn addiction relapse', 'chaser effect nofap', 'how does porn affect the brain',
+    'am i addicted to porn', 'signs of porn addiction', 'porn addiction symptoms',
+    'best app to quit porn', 'nofap app',
   ],
   openGraph: {
     title: 'Porn Addiction FAQ – Every Question Answered | POWER',
